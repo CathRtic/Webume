@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ProjectsService } from '../_services/projects.service';
-import { Project } from '../_models/Project';
+import { ProjectsService } from '../../_services/projects.service';
+import { Project } from '../../_models/Project';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgFor } from '@angular/common';
 

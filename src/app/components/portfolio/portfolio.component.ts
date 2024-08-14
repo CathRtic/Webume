@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ProjectCardComponent } from "../project-card/project-card.component";
-import { Project } from '../_models/Project';
+import { Project } from '../../_models/Project';
 import { NgFor } from '@angular/common';
-import { ProjectsService } from '../_services/projects.service';
+import { ProjectsService } from '../../_services/projects.service';
 
 @Component({
   selector: 'app-portfolio',
