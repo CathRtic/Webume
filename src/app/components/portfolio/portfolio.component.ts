@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { trigger, state, style, transition, animate } from '@angular/animations'; // Import animation functions
 import { ProjectCardComponent } from "../project-card/project-card.component";
 import { Project } from '../../_models/Project';
 import { NgFor, CommonModule } from '@angular/common';
@@ -12,14 +13,28 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, ProjectCardComponent, NgFor, FormsModule],
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.css'] // Corrected to styleUrls
+  styleUrls: ['./portfolio.component.css'],
+  animations: [  // Add animations array
+    trigger('filterAnimation', [
+      state('collapsed', style({
+        height: '0px',
+        opacity: 0,
+        overflow: 'hidden'
+      })),
+      state('expanded', style({
+        height: '*',
+        opacity: 1
+      })),
+      transition('collapsed <=> expanded', [
+        animate('300ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class PortfolioComponent implements OnInit { 
   
   projects: Project[] = [];
   isCollapsed: boolean = true;
-  isAnimated: boolean = true;
-  isFiltered: boolean = false;
 
   typescript: boolean = false;
   angular: boolean = false;
@@ -30,7 +45,8 @@ export class PortfolioComponent implements OnInit {
   nodejs: boolean = false;
   aspnet: boolean = false;
   react: boolean = false; 
-   
+  
+  isFiltered: boolean = false;
   
   constructor(private titleService: Title, private projectService: ProjectsService) {
     this.titleService.setTitle('Nikunj Patel - Portfolio');
@@ -44,7 +60,7 @@ export class PortfolioComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  Filter(){
+  Filter() {
     let filterTags: Tag[] = [];
 
     if (this.typescript){
@@ -77,15 +93,13 @@ export class PortfolioComponent implements OnInit {
 
     if (this.typescript || this.angular || this.javascript || this.python || this.java || this.nodejs || this.aspnet || this.react || this.csharp){
       this.isFiltered = true;
-    }
-    else{
+    } else {
       this.isFiltered = false;
     }
     this.projects = this.projectService.GetProjectsByFilter(filterTags);
   }
 
-  resetFilters(){
-
+  resetFilters() {
     this.typescript = false;
     this.angular = false;
     this.javascript = false; 
