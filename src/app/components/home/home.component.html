@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <!--About-->
+        <div class = "col-lg shadow border m-1">
+            <div class="text-center">
+                <h2>About Me</h2>
+                <img src="pfp.jpg" alt="PFP" width="256" height="256" class="rounded-circle">
+                <p>I’m a software developer specializing in full-stack development and cloud computing. With expertise in Java, Python, React, Angular, and DevOps tools like Docker and Kubernetes, I build innovative solutions that solve real-world problems. My passion for technology drives me to constantly learn and adapt, ensuring I stay at the forefront of the industry. Explore my projects and see how I turn ideas into impactful applications.</p>
+            </div>
+        </div>
+
+        <!--Featured-->
+        <div class = "col-lg shadow border m-1">
+            <div class="text-center">
+                <h2>Featured Project</h2>
+                <h4>{{featuredProject.name}}</h4>
+            </div>
+
+            <carousel>
+                <div *ngFor="let picture of featuredProject.pictures">
+                    <slide><img src={{picture}} alt="" style="display: block; width: 100%;"></slide>
+                </div>
+            </carousel>
+
+            <p class="mt-2">{{featuredProject.summary}}</p>
+            <p>Visit the portfolio section for more</p>
+        </div>
+    </div>
+</div>

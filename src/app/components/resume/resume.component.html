@@ -1,0 +1,152 @@
+<div class="container text-center">
+    <button (click)="DownloadPDF()" class="btn btn-primary mb-5 shadow border">Download PDF Resume</button>
+    
+    <div class="pb-2">
+        <accordion [isAnimated]="true" class="shadow">
+            <accordion-group [(isOpen)]="IsWorkExperienceOpen">
+                
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading (click)="IsWorkExperienceOpen = true">
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Work Experience</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!IsWorkExperienceOpen" style="color:white;">></div>
+                        <div *ngIf="IsWorkExperienceOpen" style="color:white;">v</div>
+                    </div>
+                    
+                </button>
+                
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Data Analyst Intern</h2>
+                    <h3 class="text-primary">ARPI Accounting</h3>
+                    <ul>
+                        <li>Assisted in the development of automated BI reports and dynamic dashboards, Utilizing PowerBI to deliver actionable insights</li>
+                        <li>Conducted in-depth analysis of financial datasets to uncover key trends and patterns, facilitating informed
+                            decision-making within the accounting domain using ArcGIS and BigQuery.</li>
+                        <li>Utilized advanced data analysis techniques to extract actionable insights, improving financial reporting accuracy and efficiency.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Front End Developer</h2>
+                    <h3 class="text-primary">MLight</h3>
+                    <ul>
+                        <li>Developed a progressive web app (PWA) using Angular to support MLight's gaming mice, providing a seamless user experience across devices.</li>
+                        <li>Designed and implemented a responsive user interface for the PWA, enhancing accessibility and usability.</li>
+                        <li>Led the integration of the PWA with embedded systems, ensuring smooth communication between the web app and mouse hardware.</li>
+                        <li>Collaborated with hardware engineers to develop and optimize firmware for the gaming mice, enabling features such as DPI adjustment, macro recording, and RGB lighting control.</li>
+                        <li>Conducted rigorous testing and debugging of both the web app and embedded systems to maintain high quality and performance.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Network Technician</h2>
+                    <h3 class="text-primary">Bell Canada</h3>
+                    <ul>
+                        <li>Employed digital and physical tools to diagnose network issues effectively and determined optimal solutions</li>
+                    </ul>
+                </div>            
+            </accordion-group>
+            
+            <accordion-group [(isOpen)]="IsEducationOpen">
+                
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading (click)="IsEducationOpen = true">
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Education</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!IsEducationOpen" style="color:white;">></div>
+                        <div *ngIf="IsEducationOpen" style="color:white;">v</div>
+                    </div>
+                    
+                </button>
+                
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Bachelor's of Science in Computer Science</h2>
+                    <h3 class="text-primary">University of Western Ontario</h3>
+                    <ul>
+                        <li>Gained solid understanding of algorithms, data structures, and object-oriented design principles.</li>
+                        <li>Hands-on experience with version control, unit testing and project tools like Confluence, Bitbucket, Jira</li>
+                        <li>Completed multiple projects employing the software development lifecycle designing, implementing and testing</li>
+                    </ul>
+                </div>            
+            </accordion-group>
+            <!--
+            <accordion-group [(isOpen)]="IsCertificationsOpen">
+                
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading (click)="IsCertificationsOpen = true">
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Certifications</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!IsCertificationsOpen" style="color:white;">></div>
+                        <div *ngIf="IsCertificationsOpen" style="color:white;">v</div>
+                    </div>
+                    
+                </button>
+                
+                <div style="text-align: left;">
+                    <h3>Microsoft Azure Data Fundamentals (DP-900)</h3>
+                    <ul>
+                        <li>Obtained August 2020</li>
+                        <li>#98923402389</li>
+                    </ul>
+                </div>            
+            </accordion-group>
+            -->
+            <accordion-group [(isOpen)]="IsSkillsOpen">
+                
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading (click)="IsSkillsOpen = true">
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Skills</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!IsSkillsOpen" style="color:white;">></div>
+                        <div *ngIf="IsSkillsOpen" style="color:white;">v</div>
+                    </div>
+                    
+                </button>
+                
+                <div class="row" style="text-align: left;">
+                    <div class="col">
+                        <h3>Programming Languages:</h3>
+                        <ul>
+                            <li>TypeScript</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>CSS</li>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>SQL</li>
+                            <li>php</li>
+
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Frameworks:</h3>
+                        <ul>
+                            <li>Angular</li>
+                            <li>React</li>
+                            <li>Node.JS</li>
+                            <li>Pytorch</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Other Skills:</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                            <li>Linux</li>
+                            <li>Atlassian: Jira, Confluence, Bitbucket</li>
+                            <li>Agile Development</li>
+                            <li>Shell Scripting</li>
+                            <li>SEO</li>
+                        </ul>
+                    </div>
+                </div>            
+            </accordion-group>
+        </accordion>
+    </div>
+    
+</div>
+

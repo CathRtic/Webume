@@ -1,0 +1,14 @@
+.collapse {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  
+  .collapse.show {
+    height: auto;
+  }
+  
+  .animated {
+    transition: all 0.3s ease-in-out;
+  }
+  
